@@ -27,6 +27,6 @@ public static class ListExtensions
 
     public static void SelectionSort(this IList<int> items)
     {
-
+        throw new NotImplementedException();
     }
 }
