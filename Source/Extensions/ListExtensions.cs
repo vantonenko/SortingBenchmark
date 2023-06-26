@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp7.Extensions;
+﻿using System.Runtime.CompilerServices;
+
+namespace ConsoleApp7.Extensions;
 
 public static class ListExtensions
 {
@@ -27,6 +29,34 @@ public static class ListExtensions
 
     public static void SelectionSort(this IList<int> items)
     {
-        throw new NotImplementedException();
+        int count = items.Count;
+
+        for (int i = 0; i < count - 1; i++)
+        {
+            var iMin = IndexOfMin(items, i, count);
+
+            if (i != iMin)
+            {
+                (items[i], items[iMin]) = (items[iMin], items[i]);
+            }
+        }
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int IndexOfMin(this IList<int> items, int start, int count)
+    {
+        int min = int.MaxValue;
+        int iMin = start;
+
+        for (int i = start; i < count; i++)
+        {
+            if (items[i] < min)
+            {
+                min = items[i];
+                iMin = i;
+            }
+        }
+
+        return iMin;
     }
 }
