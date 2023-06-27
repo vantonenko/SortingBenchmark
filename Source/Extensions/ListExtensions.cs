@@ -52,12 +52,12 @@ public static class ListExtensions
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int IndexOfMin(this IList<int> items, int start, int count)
+    public static int IndexOfMin(this IList<int> items, int start, int end)
     {
         int min = int.MaxValue;
         int iMin = start;
 
-        for (int i = start; i < count; i++)
+        for (int i = start; i < end; i++)
         {
             if (items[i] < min)
             {
