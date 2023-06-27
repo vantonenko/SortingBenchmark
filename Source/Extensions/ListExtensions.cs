@@ -33,7 +33,7 @@ public static class ListExtensions
 
         for (int i = 0; i < count - 1; i++)
         {
-            var iMin = IndexOfMin(items, i, count);
+            var iMin = items.IndexOfMin(i, count);
 
             if (i != iMin)
             {
@@ -52,7 +52,7 @@ public static class ListExtensions
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static int IndexOfMin(this IList<int> items, int start, int count)
+    public static int IndexOfMin(this IList<int> items, int start, int count)
     {
         int min = int.MaxValue;
         int iMin = start;
