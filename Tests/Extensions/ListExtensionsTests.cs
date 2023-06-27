@@ -29,5 +29,17 @@ namespace ConsoleApp7.Tests.Extensions
 
             Assert.That(input, Is.Ordered);
         }
+
+        [Test]
+        public void PopulateWithRandomValuesSuccess()
+        {
+            List<int> orderedList = Enumerable.Range(0, 10).ToList();
+
+            Assert.That(orderedList, Is.Ordered);
+
+            orderedList.PopulateWithRandomValues();
+
+            Assert.That(orderedList, Is.Not.Ordered);
+        }
     }
 }
