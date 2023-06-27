@@ -31,15 +31,14 @@ namespace ConsoleApp7.Tests.Extensions
         }
 
         [Test]
-        public void PopulateWithRandomValuesSuccess()
+        [TestCase(new[] { 1, 2, 3 })]
+        public void PopulateWithRandomValuesSuccess(IList<int> input)
         {
-            List<int> orderedList = Enumerable.Range(0, 10).ToList();
+            Assert.That(input, Is.Ordered);
 
-            Assert.That(orderedList, Is.Ordered);
+            input.PopulateWithRandomValues();
 
-            orderedList.PopulateWithRandomValues();
-
-            Assert.That(orderedList, Is.Not.Ordered);
+            Assert.That(input, Is.Not.Ordered);
         }
     }
 }
