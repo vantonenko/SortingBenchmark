@@ -42,6 +42,15 @@ public static class ListExtensions
         }
     }
 
+    public static void PopulateWithRandomValues(this IList<int> items)
+    {
+        var random = new Random();
+        foreach (int i in Enumerable.Range(0, items.Count))
+        {
+            items[i] = random.Next();
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static int IndexOfMin(this IList<int> items, int start, int count)
     {
