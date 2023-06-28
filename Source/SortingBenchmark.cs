@@ -14,13 +14,13 @@ public class SortingBenchmark
 
     [Benchmark]
     public void NativeSort() => TestArray.Sort();
-    
+
     [Benchmark]
     public void BubbleSort() => TestArray.BubbleSort();
 
     [Benchmark]
     public void SelectionSort() => TestArray.SelectionSort();
-    
+
     [Benchmark]
     public void QuickSortExternal() => TestArray.QuickSortExternal();
 }
