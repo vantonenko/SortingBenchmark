@@ -6,7 +6,8 @@ namespace ConsoleApp7;
 public class SortingBenchmark
 {
     private const int TestArraySize = 10_000;
-    private static readonly List<int> TestArray = Enumerable.Range(0, TestArraySize).ToList();
+    private readonly List<int> TestArray = 
+        Enumerable.Range(0, TestArraySize).ToList();
 
     [IterationSetup]
     public void PrepareTestData() => TestArray.PopulateWithRandomValues();
