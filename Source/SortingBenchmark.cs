@@ -20,4 +20,7 @@ public class SortingBenchmark
 
     [Benchmark]
     public void SelectionSort() => TestArray.SelectionSort();
+    
+    [Benchmark]
+    public void QuickSortExternal() => TestArray.QuickSortExternal();
 }

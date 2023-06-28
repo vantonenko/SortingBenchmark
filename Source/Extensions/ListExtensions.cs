@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Microsoft.CodeAnalysis.Operations;
+using System.Runtime.CompilerServices;
 
 namespace ConsoleApp7.Extensions;
 
@@ -40,6 +41,44 @@ public static class ListExtensions
                 (items[i], items[iMin]) = (items[iMin], items[i]);
             }
         }
+    }
+
+    /// <summary>
+    /// First attempt to implement QuickSort. 
+    /// Non in-place intuitive implementation.
+    /// </summary>
+    public static IList<int> QuickSortExternal(this IList<int> items)
+    {
+        static IEnumerable<int> quickSort(IList<int> items)
+        {
+            int count = items.Count;
+            if (count < 2)
+            {
+                return items;
+            }
+
+            int midIndex = count / 2;
+            int midValue = items[midIndex];
+
+            List<int> left =
+                items
+                    .ExceptIndex(midIndex)
+                    .Where(item => item < midValue)
+                    .ToList(count);
+
+            List<int> right =
+                items
+                    .ExceptIndex(midIndex)
+                    .Where(item => item >= midValue)
+                    .ToList(count);
+
+            return
+                QuickSortExternal(left)
+                    .Concat(midValue)
+                    .Concat(QuickSortExternal(right));
+        }
+
+        return quickSort(items).ToList(items.Count);
     }
 
     public static void PopulateWithRandomValues(this IList<int> items)

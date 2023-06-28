@@ -29,6 +29,19 @@ namespace ConsoleApp7.Tests.Extensions
 
             Assert.That(input, Is.Ordered);
         }
+        
+        [Test]
+        [TestCase(new int[] { })]
+        [TestCase(new[] { 1 })]
+        [TestCase(new[] { 2, 1, 1 })]
+        [TestCase(new[] { 2, 1, 1, 2 })]
+        [TestCase(new[] { 3, 2, 1 })]
+        public void QuickSortSuccess(IList<int> input)
+        {
+            input = input.QuickSortExternal();
+
+            Assert.That(input, Is.Ordered);
+        }
 
         [Test]
         [TestCase(new[] { 1, 2, 3 })]
