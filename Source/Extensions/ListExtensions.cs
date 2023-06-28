@@ -49,36 +49,32 @@ public static class ListExtensions
     /// </summary>
     public static IList<int> QuickSortExternal(this IList<int> items)
     {
-        static IEnumerable<int> quickSort(IList<int> items)
+        int count = items.Count;
+        if (count < 2)
         {
-            int count = items.Count;
-            if (count < 2)
-            {
-                return items;
-            }
-
-            int midIndex = count / 2;
-            int midValue = items[midIndex];
-
-            List<int> left =
-                items
-                    .ExceptIndex(midIndex)
-                    .Where(item => item < midValue)
-                    .ToList(count);
-
-            List<int> right =
-                items
-                    .ExceptIndex(midIndex)
-                    .Where(item => item >= midValue)
-                    .ToList(count);
-
-            return
-                QuickSortExternal(left)
-                    .Concat(midValue)
-                    .Concat(QuickSortExternal(right));
+            return items;
         }
 
-        return quickSort(items).ToList(items.Count);
+        int midIndex = count / 2;
+        int midValue = items[midIndex];
+
+        List<int> left =
+            items
+                .ExceptIndex(midIndex)
+                .Where(item => item < midValue)
+                .ToList(count);
+
+        List<int> right =
+            items
+                .ExceptIndex(midIndex)
+                .Where(item => item >= midValue)
+                .ToList(count);
+
+        return
+            QuickSortExternal(left)
+                .Concat(midValue)
+                .Concat(QuickSortExternal(right))
+                .ToList(count);
     }
 
     public static void PopulateWithRandomValues(this IList<int> items)
