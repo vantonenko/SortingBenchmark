@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E549E73-A596-42F9-9252-54F2D505CE27}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp7", "Source\ConsoleApp7.csproj", "{F6BE3A05-6404-43C7-8AAD-2D3648100980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingBenchmark", "Source\SortingBenchmark.csproj", "{F6BE3A05-6404-43C7-8AAD-2D3648100980}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp7.Tests", "Tests\ConsoleApp7.Tests.csproj", "{68A609D3-4D21-4E9B-8509-34BCA86A3E7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingBenchmark.Tests", "Tests\SortingBenchmark.Tests.csproj", "{68A609D3-4D21-4E9B-8509-34BCA86A3E7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
