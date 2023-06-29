@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp7.Extensions;
+﻿namespace SortingBenchmark.Extensions;
 
 public static class EnumerableExtensions
 {

@@ -1,6 +1,6 @@
-using ConsoleApp7.Extensions;
+using SortingBenchmark.Extensions;
 
-namespace ConsoleApp7.Tests.Extensions
+namespace SortingBenchmark.Tests.Extensions
 {
     public class ListExtensionsTests
     {

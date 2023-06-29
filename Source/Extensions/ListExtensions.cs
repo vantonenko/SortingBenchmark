@@ -1,7 +1,6 @@
-﻿using Microsoft.CodeAnalysis.Operations;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
-namespace ConsoleApp7.Extensions;
+namespace SortingBenchmark.Extensions;
 
 public static class ListExtensions
 {

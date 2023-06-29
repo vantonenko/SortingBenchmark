@@ -1,9 +1,9 @@
 ﻿using BenchmarkDotNet.Running;
 
-namespace ConsoleApp7
+namespace SortingBenchmark
 {
     internal class Program
     {
-        private static void Main() => BenchmarkRunner.Run<SortingBenchmark>();
+        private static void Main() => BenchmarkRunner.Run<global::SortingBenchmark.SortingBenchmark>();
     }
 }

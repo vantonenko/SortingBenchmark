@@ -1,26 +1,25 @@
 ﻿using BenchmarkDotNet.Attributes;
-using ConsoleApp7.Extensions;
+using SortingBenchmark.Extensions;
 
-namespace ConsoleApp7;
+namespace SortingBenchmark;
 
 public class SortingBenchmark
 {
     private const int TestArraySize = 10_000;
-    private readonly List<int> TestArray = 
-        Enumerable.Range(0, TestArraySize).ToList();
+    private readonly List<int> _testArray = Enumerable.Range(0, TestArraySize).ToList();
 
     [IterationSetup]
-    public void PrepareTestData() => TestArray.PopulateWithRandomValues();
+    public void PrepareTestData() => _testArray.PopulateWithRandomValues();
 
     [Benchmark]
-    public void NativeSort() => TestArray.Sort();
+    public void NativeSort() => _testArray.Sort();
 
     [Benchmark]
-    public void BubbleSort() => TestArray.BubbleSort();
+    public void BubbleSort() => _testArray.BubbleSort();
 
     [Benchmark]
-    public void SelectionSort() => TestArray.SelectionSort();
+    public void SelectionSort() => _testArray.SelectionSort();
 
     [Benchmark]
-    public void QuickSortExternal() => TestArray.QuickSortExternal();
+    public void QuickSortExternal() => _testArray.QuickSortExternal();
 }
