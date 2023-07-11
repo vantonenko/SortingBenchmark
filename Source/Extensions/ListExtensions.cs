@@ -57,9 +57,9 @@ public static class ListExtensions
         int midIndex = count / 2;
         int midValue = items[midIndex];
 
-        var left = new List<int>(count);
-        var mid = new List<int>(count);
-        var right = new List<int>(count);
+        var left = new List<int>();
+        var mid = new List<int>();
+        var right = new List<int>();
 
         foreach (int item in items)
         {
