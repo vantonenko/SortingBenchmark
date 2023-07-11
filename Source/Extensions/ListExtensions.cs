@@ -57,21 +57,31 @@ public static class ListExtensions
         int midIndex = count / 2;
         int midValue = items[midIndex];
 
-        List<int> left =
-            items
-                .ExceptIndex(midIndex)
-                .Where(item => item < midValue)
-                .ToList(count);
+        var left = new List<int>(count);
+        var mid = new List<int>(count);
+        var right = new List<int>(count);
 
-        List<int> right =
-            items
-                .ExceptIndex(midIndex)
-                .Where(item => item >= midValue)
-                .ToList(count);
+        foreach (int item in items)
+        {
+            if (item < midValue)
+            {
+                left.Add(item);
+            }
+
+            if (item == midValue)
+            {
+                mid.Add(item);
+            }
+            
+            if (item > midValue)
+            {
+                right.Add(item);
+            }
+        }
 
         return
             QuickSortExternal(left)
-                .Concat(midValue)
+                .Concat(mid)
                 .Concat(QuickSortExternal(right))
                 .ToList(count);
     }

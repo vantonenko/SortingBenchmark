@@ -4,6 +4,6 @@ namespace SortingBenchmark
 {
     internal class Program
     {
-        private static void Main() => BenchmarkRunner.Run<global::SortingBenchmark.SortingBenchmark>();
+        private static void Main() => BenchmarkRunner.Run<SortingBenchmark>();
     }
 }

@@ -44,9 +44,10 @@ namespace SortingBenchmark.Tests.Extensions
         }
 
         [Test]
-        [TestCase(new[] { 1, 2, 3 })]
-        public void PopulateWithRandomValuesSuccess(IList<int> input)
+        public void PopulateWithRandomValuesSuccess()
         {
+            List<int> input = Enumerable.Range(0, 100).ToList();
+
             Assert.That(input, Is.Ordered);
 
             input.PopulateWithRandomValues();
